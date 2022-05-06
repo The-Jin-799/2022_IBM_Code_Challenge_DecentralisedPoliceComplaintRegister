@@ -220,11 +220,17 @@ function App() {
                               </Link>
                             </StyledTableCell>
                             <StyledTableCell align="right">
-                              {complaint.complaint_accepted
-                                ? moment(
-                                    Number(complaint.accepted_date) * 1000
-                                  ).format("MMMM Do YYYY, h:mm:ss a")
-                                : "Pending"}
+                              {complaint.complaint_accepted ? (
+                                moment(
+                                  Number(complaint.accepted_date) * 1000
+                                ).format("MMMM Do YYYY, h:mm:ss a")
+                              ) : complaint.mark_as_spam ? (
+                                <Button variant="contained" disabled>
+                                  Spammed Complaint
+                                </Button>
+                              ) : (
+                                "Pending"
+                              )}
                             </StyledTableCell>
                             <StyledTableCell align="right">
                               {complaint.fir_status ? (
@@ -235,14 +241,26 @@ function App() {
                                     Number(complaint.fir_date) * 1000
                                   ).format("MMMM Do YYYY, h:mm:ss a")}
                                 </Link>
+                              ) : complaint.mark_as_spam ? (
+                                <Button variant="contained" disabled>
+                                  Spammed Complaint
+                                </Button>
                               ) : (
                                 "Pending"
                               )}
                             </StyledTableCell>
                             <StyledTableCell align="right">
-                              {complaint.mark_as_spam
-                                ? complaint.markasspam_date
-                                : "No"}
+                              {complaint.mark_as_spam ? (
+                                <Link
+                                  href={`https://cloudflare-ipfs.com/ipfs/${complaint.spam_reason_doc}`}
+                                >
+                                  {moment(
+                                    Number(complaint.markasspam_date) * 1000
+                                  ).format("MMMM Do YYYY, h:mm:ss a")}
+                                </Link>
+                              ) : (
+                                "No"
+                              )}
                             </StyledTableCell>
                           </StyledTableRow>
                         )
