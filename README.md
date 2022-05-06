@@ -23,3 +23,17 @@ Sandra Xavier
 A blockchain based complaint mangement and tracking system, which persist a permanent proof for the complainer in the court of law against Policemen not taking action on their complaint. The complaint documents are stored in IPFS which is a also a decentralised distributed storage protocol. The Police can update the status of recieved complaint and every updation will be registered in the blockchain.
 ## System Architecture
 <img src="https://i.ibb.co/rFkfK1j/Started-with-Solidity-React-5.png" alt="system architecture" width="800"/>
+
+## Implementation Tools
+Front End- React
+
+Smart Contract- Solidity
+
+Authentication and User management- Google Firebase
+
+Storage- IPFS
+
+Development Enviornment- Truffle
+
+Local Blockchain- Ganache
+
