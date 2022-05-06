@@ -37,3 +37,8 @@ Development Enviornment- Truffle
 
 Local Blockchain- Ganache
 
+## Presentation
+https://docs.google.com/presentation/d/1yQJX_kHLd4hVTd3LKZls9a3TQgKFs-0JXaf4r2QG2x8/edit?usp=sharing
+
+## Video
+https://youtu.be/kS2mTnq_K4o
