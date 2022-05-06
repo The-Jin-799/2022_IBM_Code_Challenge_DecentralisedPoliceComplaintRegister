@@ -1,5 +1,5 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
+var PoliceComplaint = artifacts.require("./PoliceComplaint.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(SimpleStorage);
+  deployer.deploy(PoliceComplaint);
 };

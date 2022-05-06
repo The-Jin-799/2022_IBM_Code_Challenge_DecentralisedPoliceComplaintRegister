@@ -21,7 +21,7 @@ function App() {
     let authToken = sessionStorage.getItem("Auth Token");
 
     if (authToken) {
-      navigate("/home");
+      usertype === "complainer" ? navigate("/home") : console.log(authToken);
     }
   }, []);
   const [email, setEmail] = useState("");
@@ -82,6 +82,7 @@ function App() {
                 },
                 { merge: true }
               );
+              navigate("/policehome");
 
               console.log("Document written with ID: ", userRef.id);
             } else {
@@ -125,7 +126,7 @@ function App() {
         <ToastContainer />
         <Routes>
           <Route
-            path="/login"
+            path="/"
             element={
               <Form
                 title="Login"
