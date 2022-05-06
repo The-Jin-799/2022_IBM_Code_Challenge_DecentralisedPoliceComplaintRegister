@@ -22,12 +22,12 @@ import {
   Table,
 } from "@mui/material";
 function PoliceHome() {
-  const [accountaddress, setAccountAddress] = useState();
+  const [accountaddress, setAccountAddress] = useState("");
   const [web3, setWeb3] = useState(null);
   const [contract, setContract] = useState(null);
   const [complaints, setComplaints] = useState();
   const [filebuffer, setFileBuffer] = useState(null);
-  const [ipfshash, setIPFSHash] = useState();
+  const [ipfshash, setIPFSHash] = useState("");
   const [selectedcomplaintid, setSelectedComplaintId] = useState();
   const [reasonfilebuffer, setReasonFileBuffer] = useState(null);
   const [reasonipfshash, setReasonIPFSHash] = useState();
@@ -135,6 +135,7 @@ function PoliceHome() {
   //end smartcontract methods
   //get uploaded FIR doc
   const captureFile = (event) => {
+    console.log("called capturefile");
     event.preventDefault();
     const file = event.target.files[0];
     const reader = new window.FileReader();
@@ -142,7 +143,6 @@ function PoliceHome() {
     reader.onloadend = () => {
       setFileBuffer(Buffer(reader.result));
     };
-    console.log("buffer:", filebuffer);
   };
 
   //get uploaded reason doc
@@ -277,6 +277,7 @@ function PoliceHome() {
                             </label>
                           )}
                         </StyledTableCell>
+
                         <StyledTableCell align="right">
                           {complaint.mark_as_spam ? (
                             <Link
@@ -292,10 +293,10 @@ function PoliceHome() {
                               FIR Filed
                             </Button>
                           ) : !reasonfilebuffer ? (
-                            <label htmlFor="contained-button-file">
+                            <label htmlFor="contained-button-file-2">
                               <Input
                                 accept="*"
-                                id="contained-button-file"
+                                id="contained-button-file-2"
                                 type="file"
                                 onChange={captureReasonFile}
                               />
